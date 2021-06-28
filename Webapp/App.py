@@ -16,6 +16,7 @@ from io import BytesIO
 from PIL import Image, ImageOps
 st.set_option('deprecation.showPyplotGlobalUse', False)
 import cv2
+from keras.models import model_from_json
 
 def main():
     st.title("Covid-19 Detection using Radiography images")
@@ -97,7 +98,7 @@ def save_and_display_gradcam(img_path , heatmap, cam_path="cam.jpg", alpha=0.4):
     img = keras.preprocessing.image.load_img(img_path)
     img = keras.preprocessing.image.img_to_array(img)
     heatmap = np.uint8(255 * heatmap)
-    jet = cm.get_cmap("jet")
+    jet = cm.get_cmap("inferno_r")
     jet_colors = jet(np.arange(256))[:, :3]
     jet_heatmap = jet_colors[heatmap]
     jet_heatmap = keras.preprocessing.image.array_to_img(jet_heatmap)
@@ -121,8 +122,8 @@ def image_prediction_and_visualization(path,last_conv_layer_name = "conv5_block3
     st.subheader("Summary:")
     l1, l2 = st.beta_columns(2)
     l1.write(f"The given image is of type : {res}")
-    l2.write("Confidence Score :" +str(model.predict(img)[0][0]*100)[:5]+ "%")
-    #st.write(f"The chances of image being Normal is : {model.predict(img)[0][1]*100} %")
+    l2.write("The chances of image being Covid is :" +str(model.predict(img)[0][0]*100)[:5]+ "%")
+    l2.write("The chances of image being Normal is :"+str( model.predict(img)[0][1]*100)[:5]+ "%")
 
     with st.spinner("Generating Grd cam vizualization....."):
         grad_img=save_and_display_gradcam(path, heatmap)
