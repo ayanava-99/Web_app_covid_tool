@@ -1,6 +1,5 @@
 streamlit==0.81.1
 h5py
-os
 pandas 
 numpy
 tensorflow
