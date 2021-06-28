@@ -7,14 +7,13 @@ v 0.1.0
 import streamlit as st 
 import pandas as pandas
 import numpy as np
-import keras
+import tensorflow.keras as keras
 import tensorflow as tf 
-from keras.models import Model
-from keras.models import load_model
-from keras.preprocessing import image
+from tensorflow.keras.models import Model
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
-import keras
 from IPython.display import Image, display
 import warnings
 from io import BytesIO
