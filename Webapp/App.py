@@ -16,7 +16,6 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 from IPython.display import Image, display
 import warnings
-import os
 from io import BytesIO
 from PIL import Image, ImageOps
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -53,7 +52,7 @@ def main():
 
 def _get_model():
     
-    model = load_model(os.path.join("./models/","bestmodel.h5"))
+    model = load_model("bestmodel.h5")
     return model
 
 def get_img_array(img_path):
