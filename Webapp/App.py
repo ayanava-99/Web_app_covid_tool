@@ -51,7 +51,7 @@ def main():
         
 
 def _get_model():
-    model = load_model("./models/bestmodel.h5")
+    model = load_model("/Web_app_covid_tool/Webapp/models/bestmodel.h5")
     return model
 
 def get_img_array(img_path):
