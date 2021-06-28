@@ -142,6 +142,8 @@ if __name__ == '__main__':
     """
     <h1><center>COVID Detection Tool</center></h1>
     <a style='display: block; text-align: center;' target="_blank" href="https://www.dropbox.com/s/e1r2laj50nh4tez/COVID-19_Radiography_Dataset.zip?dl=0">Link to Dataset</a>
+    <a style='display: block; text-align: center;' target="_blank" href="https://drive.google.com/file/d/1G2LgvUbT4O8kDgk41y-fARvQp-AXY1xn/view?usp=sharing">Working Video</a>
+
     """, unsafe_allow_html=True)
     
     main()
