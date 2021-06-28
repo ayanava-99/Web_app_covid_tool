@@ -1,4 +1,5 @@
 streamlit==0.81.1
+h5py
 pandas 
 numpy
 tensorflow
