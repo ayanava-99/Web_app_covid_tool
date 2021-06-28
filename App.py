@@ -38,7 +38,7 @@ def main():
         if col2.button("Predict"):
             with st.spinner('Generating Predictions...'): 
                 byte_file = uploaded_img_file.read()
-                with open('img.png', mode='wb+') as f:
+                with open('img.png', mode='w') as f:
                     f.write(byte_file)
                 #image_file = BytesIO(uploaded_img_file.getvalue().decode("utf-8"))
                 #image_file=uploaded_img_file.read()
