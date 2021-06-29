@@ -45,7 +45,8 @@ def main():
                 image_prediction_and_visualization('img.png',last_conv_layer_name = "conv5_block3_3_conv")
 
 
-    
+    else:
+        st.warning("Please upload image file to continue")
 
 
         
