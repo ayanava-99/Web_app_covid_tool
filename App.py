@@ -6,7 +6,6 @@ v 0.1.0
 '''
 
 import streamlit as st
-import base64
 import pandas as pandas
 import numpy as np
 import tensorflow.keras as keras
@@ -22,15 +21,7 @@ from io import BytesIO
 from PIL import Image, ImageOps
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-page_bg_img = '''
-    <style>
-    body {
-    background-image: url("https://drive.google.com/file/d/1YyJ8-lYULOW8-xw-us15Y2fQRyUbkvfs/view?usp=sharing");
-    background-size: cover;
-    }
-    </style>
-    '''
-st.markdown(page_bg_img, unsafe_allow_html=True)
+
 
 
 
@@ -136,7 +127,7 @@ def image_prediction_and_visualization(path,last_conv_layer_name = "conv5_block3
     l1, l2 = st.beta_columns(2)
     l1.write(f"The given image is of type : {res}")
     l2.write("The chances of Covid infected :" +str(model.predict(img)[0][0]*100)[:5]+ "%")
-    l2.write("The chances of being Normal :"+str( (100 - model.predict(img)[0][1]*100)[:5])+ "%")
+    l2.write("The chances of being Normal :"+str( 100 - (model.predict(img)[0][1]*100)[:5])+ "%")
 
     with st.spinner("Generating results....."):
         grad_img=save_and_display_gradcam(path, heatmap)
