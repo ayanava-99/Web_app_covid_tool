@@ -1,10 +1,12 @@
 '''
-!/usr/bin/env tf
+!/usr/bin/env_tf
 v 0.1.0
 @author:ayanava_dutta
 -*-coding:utf-8-*-
 '''
-import streamlit as st 
+
+import streamlit as st
+import base64
 import pandas as pandas
 import numpy as np
 import tensorflow.keras as keras
@@ -21,7 +23,12 @@ from PIL import Image, ImageOps
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
+
+
+
+
 def main():
+    
     st.title("Covid-19 Detection using Radiography images")
 
     war=st.checkbox("Show Warning",value=True)
@@ -121,10 +128,10 @@ def image_prediction_and_visualization(path,last_conv_layer_name = "conv5_block3
     st.subheader("Summary:")
     l1, l2 = st.beta_columns(2)
     l1.write(f"The given image is of type : {res}")
-    l2.write("The chances of image being Covid is :" +str(model.predict(img)[0][0]*100)[:5]+ "%")
-    l2.write("The chances of image being Normal is :"+str( model.predict(img)[0][1]*100)[:5]+ "%")
+    l2.write("The chances of Covid infected :" +str(model.predict(img)[0][0]*100)[:5]+ "%")
+    l2.write("The chances of being Normal :"+str( (100 - model.predict(img)[0][1]*100)[:5])+ "%")
 
-    with st.spinner("Generating Grd cam vizualization....."):
+    with st.spinner("Generating results....."):
         grad_img=save_and_display_gradcam(path, heatmap)
    
     
@@ -132,7 +139,7 @@ def image_prediction_and_visualization(path,last_conv_layer_name = "conv5_block3
 
     c1.image(path,caption='Original image')
 
-    c2.image(grad_img,caption='Image representing region of interest')
+    c2.image(grad_img,caption='Image with weighted region of interest')
    
     
 
@@ -146,5 +153,15 @@ if __name__ == '__main__':
     <a style='display: block; text-align: center;' target="_blank" href="https://drive.google.com/file/d/1G2LgvUbT4O8kDgk41y-fARvQp-AXY1xn/view?usp=sharing">Working Video</a>
 
     """, unsafe_allow_html=True)
+    page_bg_img = '''
+        <style>
+        body {
+        background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+        background-size: cover;
+        }
+        </style>
+        '''
+    
+    st.markdown(page_bg_img, unsafe_allow_html=True)
     
     main()
