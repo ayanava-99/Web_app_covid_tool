@@ -127,7 +127,7 @@ def image_prediction_and_visualization(path,last_conv_layer_name = "conv5_block3
     l1, l2 = st.beta_columns(2)
     l1.write(f"The given image is of type : {res}")
     l2.write("The chances of Covid infected :" +str(model.predict(img)[0][0]*100)[:5]+ "%")
-    l2.write("The chances of being Normal :"+str( 100 - (model.predict(img)[0][1]*100)[:5])+ "%")
+    l2.write("The chances of being Normal :"+str( model.predict(img)[0][1]*100)[:5]+ "%")
 
     with st.spinner("Generating results....."):
         grad_img=save_and_display_gradcam(path, heatmap)
