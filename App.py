@@ -132,7 +132,7 @@ def image_prediction_and_visualization(path,last_conv_layer_name = "conv5_block3
 
     c1.image(path,caption='Original image')
 
-    c2.image(grad_img,caption='Image representing region on interest')
+    c2.image(grad_img,caption='Image representing region of interest')
    
     
 
@@ -142,7 +142,7 @@ if __name__ == '__main__':
     st.sidebar.markdown(
     """
     <h1><center>COVID Detection Tool</center></h1>
-    <a style='display: block; text-align: center;' target="_blank" href="https://www.dropbox.com/s/e1r2laj50nh4tez/COVID-19_Radiography_Dataset.zip?dl=0">Link to Dataset</a>
+    <a style='display: block; text-align: center;' target="_blank" href="https://drive.google.com/drive/folders/1xfEaAgSBEuxoo8rVwIu8_yT6QGLI2Ftg?usp=sharing">Sample images</a>
     <a style='display: block; text-align: center;' target="_blank" href="https://drive.google.com/file/d/1G2LgvUbT4O8kDgk41y-fARvQp-AXY1xn/view?usp=sharing">Working Video</a>
 
     """, unsafe_allow_html=True)
