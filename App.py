@@ -28,6 +28,16 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
 def main():
+    page_bg_img = '''
+        <style>
+        body {
+        background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+        background-size: cover;
+        }
+        </style>
+        '''
+    
+    st.markdown(page_bg_img, unsafe_allow_html=True
     
     st.title("Covid-19 Detection using Radiography images")
 
@@ -153,15 +163,6 @@ if __name__ == '__main__':
     <a style='display: block; text-align: center;' target="_blank" href="https://drive.google.com/file/d/1G2LgvUbT4O8kDgk41y-fARvQp-AXY1xn/view?usp=sharing">Working Video</a>
 
     """, unsafe_allow_html=True)
-    page_bg_img = '''
-        <style>
-        body {
-        background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
-        background-size: cover;
-        }
-        </style>
-        '''
-    
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+)
     
     main()
