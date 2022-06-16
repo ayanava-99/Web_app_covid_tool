@@ -1,4 +1,4 @@
-# Covid Detection in Radiography Lung Image
+# Covid Detection from  Lung CT
 
 [Visit](https://share.streamlit.io/ayanava-99/web_app_covid_tool/main/App.py)
 
