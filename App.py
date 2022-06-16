@@ -152,6 +152,6 @@ if __name__ == '__main__':
     <a style='display: block; text-align: center;' target="_blank" href="https://drive.google.com/file/d/1G2LgvUbT4O8kDgk41y-fARvQp-AXY1xn/view?usp=sharing">Working Video</a>
 
     """, unsafe_allow_html=True)
-)
+
     
     main()
