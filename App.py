@@ -27,11 +27,11 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 def main():
 
-    st.title("Covid-19 Detection using Radiography images")
+    st.title("Covid-19 Detection using Lung CT")
 
-    war=st.checkbox("Show Warning",value=True)
+    war=st.checkbox("Disclaimer",value=True)
     if war:
-        st.warning("Note: This app is made as a part of research work only")
+        st.warning("Note: This app is made as a part of research work only, results from this may not be medically accurate")
 
 
     uploaded_img_file = st.file_uploader("Upload your image", type=['png'])
